@@ -65,9 +65,21 @@ export default function GallerySection() {
             All images shared with the consent of community members and visitors. 
             We practice ethical and respectful photography.
           </p>
-          <p className="text-warm-brown font-semibold">
-            Have photos from your visit? Share with us @aryanvalleycamp
-          </p>
+       <p className="text-warm-brown font-semibold">
+  Have photos from your visit? Share with us :{' '}
+
+  <a
+    href="mailto:thearyanvalleycamp@gmail.com"
+    className="
+      text-stone-grey
+      text-sm
+      hover:text-warm-brown
+      transition-colors
+    "
+  >
+    thearyanvalleycamp@gmail.com 
+  </a>
+</p>
         </motion.div>
       </div>
     </section>

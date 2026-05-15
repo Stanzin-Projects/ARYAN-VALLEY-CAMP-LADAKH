@@ -12,11 +12,26 @@ export default function FestivalCard({ title, season, description, highlight, im
     >
       {/* Image Container */}
       <div className="relative h-64 md:h-80 overflow-hidden">
-        <img
+        {/* <img
           src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+        /> */}
+
+        <img
+  src="/WhatsApp Image 2025-12-19 at 3.48.38 PM.jpeg"
+  alt={title}
+  className="
+    w-full
+    h-full
+    object-cover
+    group-hover:scale-110
+    transition-transform
+    duration-500
+  "
+/>
+
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

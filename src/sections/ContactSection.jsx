@@ -71,7 +71,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-warm-brown mb-2">Email</h4>
                 <a
-                  href="mailto:info@aryanvalley.com"
+                  href="mailto:thearyanvalleycamp@gmail.com"
                   className="text-stone-grey text-sm hover:text-warm-brown transition-colors"
                 >
                   thearyanvalleycamp@gmail.com
@@ -98,7 +98,7 @@ export default function ContactSection() {
 
             {/* WhatsApp CTA */}
             <motion.a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/917051298463"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

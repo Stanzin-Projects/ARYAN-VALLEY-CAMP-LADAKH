@@ -120,12 +120,19 @@ export default function Footer() {
               <li className="flex gap-3 items-center">
                 <Mail size={18} className="text-sky-blue" />
 
-                <a
+                {/* <a
                   href="mailto:info@aryanvalley.com"
                   className="text-off-white/80 hover:text-sky-blue transition-colors"
                 >
                   info@aryanvalley.com
-                </a>
+                </a> */}
+
+                <a
+                   href="mailto:thearyanvalleycamp@gmail.com"
+                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                >
+                thearyanvalleycamp@gmail.com
+               </a>
               </li>
 
             </ul>

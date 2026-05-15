@@ -15,8 +15,9 @@
 
 //   return (
 //     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+
 //       {/* Background Image */}
-//       <div
+//       {/* <div
 //         className="absolute inset-0 z-0"
 //         style={{
 //           backgroundImage:
@@ -24,7 +25,21 @@
 //           backgroundSize: 'cover',
 //           backgroundPosition: 'center',
 //         }}
-//       >
+//       > */}
+
+//       <div
+//   className="absolute inset-0 z-0"
+//   style={{
+//     backgroundImage:
+//       'url("/WhatsApp Image 2025-12-19 at 3.48.23 PM.jpeg")',
+//     backgroundSize: 'cover',
+//     backgroundPosition: 'center',
+//   }}
+// >
+
+
+
+
 //         {/* Gradient Overlay */}
 //         <motion.div
 //           initial={{ opacity: 0 }}
@@ -157,7 +172,9 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source
-          src="/11800506-uhd_3840_2160_25fps.mp4"
+          // src="/11800506-uhd_3840_2160_25fps.mp4"
+          src="/WhatsApp Video 2026-04-09 at 7.32.23 PM.mp4"
+          // src = "my-app/public/WhatsApp Video 2026-04-09 at 7.32.23 PM.mp4"
           type="video/mp4"
         />
       </video>

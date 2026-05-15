@@ -67,28 +67,28 @@ export default function CultureSection() {
           >
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1533028365561-7fd151b46e6b?w=400&h=300&fit=crop"
+                src="https://images.pexels.com/photos/1539702/pexels-photo-1539702.jpeg"
                 alt="Brokpa Culture"
                 className="w-full h-full object-cover"
               />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop"
+                src="https://images.pexels.com/photos/29303176/pexels-photo-29303176.jpeg"
                 alt="Traditional Dance"
                 className="w-full h-full object-cover"
               />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                src="https://images.pexels.com/photos/878846/pexels-photo-878846.jpeg"
                 alt="Local Community"
                 className="w-full h-full object-cover"
               />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1488459716781-6518f4618af5?w=400&h=300&fit=crop"
+                src="https://images.pexels.com/photos/4938550/pexels-photo-4938550.jpeg"
                 alt="Village Life"
                 className="w-full h-full object-cover"
               />
