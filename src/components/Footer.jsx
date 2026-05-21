@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
+import { TextHoverEffect, FooterBackgroundGradient } from './ui/hover-footer';
 
 import {
   FaInstagram,
@@ -9,11 +10,11 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-brown text-off-white py-16">
+    <footer className="bg-deep-brown text-off-white py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 relative z-10">
 
           {/* Column 1: About */}
           <motion.div
@@ -22,9 +23,13 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4 font-serif">
-              Aryan Valley
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/favicon.svg"
+                alt="Aryan Valley Camp Logo"
+                className="h-20 w-auto object-contain"
+              />
+            </div>
 
             <p className="text-off-white/80 text-sm leading-relaxed">
               Experience authentic Himalayan culture beside the Indus River.
@@ -47,7 +52,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#home"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
                   Home
                 </a>
@@ -56,7 +61,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
                   About
                 </a>
@@ -64,17 +69,17 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="#experiences"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  href="#facilities"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
-                  Experiences
+                  Facilities
                 </a>
               </li>
 
               <li>
                 <a
                   href="#contact"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
                   Contact
                 </a>
@@ -98,7 +103,7 @@ export default function Footer() {
               <li className="flex gap-3 items-start">
                 <MapPin
                   size={18}
-                  className="flex-shrink-0 mt-0.5 text-sky-blue"
+                  className="flex-shrink-0 mt-0.5 text-warm-brown"
                 />
 
                 <span className="text-off-white/80">
@@ -107,29 +112,22 @@ export default function Footer() {
               </li>
 
               <li className="flex gap-3 items-center">
-                <Phone size={18} className="text-sky-blue" />
+                <Phone size={18} className="text-warm-brown" />
 
                 <a
-                  href="tel:+919876543210"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  href="tel:+919419178890"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
-                  +91 98765 43210
+                  +91 9419178890
                 </a>
               </li>
 
               <li className="flex gap-3 items-center">
-                <Mail size={18} className="text-sky-blue" />
-
-                {/* <a
-                  href="mailto:info@aryanvalley.com"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
-                >
-                  info@aryanvalley.com
-                </a> */}
+                <Mail size={18} className="text-warm-brown" />
 
                 <a
                    href="mailto:thearyanvalleycamp@gmail.com"
-                  className="text-off-white/80 hover:text-sky-blue transition-colors"
+                  className="text-off-white/80 hover:text-warm-brown transition-colors"
                 >
                 thearyanvalleycamp@gmail.com
                </a>
@@ -157,7 +155,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-off-white/20 flex items-center justify-center hover:bg-sky-blue transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
               >
                 <FaInstagram size={18} />
               </motion.a>
@@ -168,18 +166,18 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-off-white/20 flex items-center justify-center hover:bg-sky-blue transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
               >
                 <FaFacebookF size={18} />
               </motion.a>
 
-              {/* Telegram / Send */}
+              {/* Message */}
               <motion.a
-                href="#"
+                href="https://wa.me/919419178890"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-off-white/20 flex items-center justify-center hover:bg-sky-blue transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
               >
                 <Send size={18} />
               </motion.a>
@@ -190,7 +188,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-off-white/20 pt-8">
+        <div className="border-t border-off-white/20 pt-8 relative z-10">
           <div className="text-center text-sm text-off-white/60">
             <p>
               © 2026 Aryan Valley Camp. All rights reserved.
@@ -199,7 +197,7 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="hover:text-sky-blue transition-colors"
+                className="hover:text-warm-brown transition-colors"
               >
                 Privacy Policy
               </a>
@@ -208,7 +206,7 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="hover:text-sky-blue transition-colors"
+                className="hover:text-warm-brown transition-colors"
               >
                 Terms of Service
               </a>
@@ -216,6 +214,13 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Text hover effect */}
+        <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 relative z-20">
+          <TextHoverEffect text="Aryan Valley" className="z-50" />
+        </div>
+
+        {/* Background gradient */}
+        <FooterBackgroundGradient />
       </div>
     </footer>
   );

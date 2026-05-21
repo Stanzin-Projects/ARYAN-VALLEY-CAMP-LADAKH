@@ -78,6 +78,7 @@ import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import CultureSection from './sections/CultureSection';
 import ExperiencesSection from './sections/ExperiencesSection';
+import FacilitiesSection from './sections/FacilitiesSection';
 import FestivalsSection from './sections/FestivalsSection';
 import GallerySection from './sections/GallerySection';
 import TestimonialsSection from './sections/TestimonialsSection';
@@ -133,6 +134,7 @@ export default function App() {
         <AboutSection />
         <CultureSection />
         <ExperiencesSection />
+        <FacilitiesSection />
         <FestivalsSection />
         <GallerySection />
         <TestimonialsSection />

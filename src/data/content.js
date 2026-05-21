@@ -88,12 +88,57 @@ export const festivals = [
   },
 ];
 
+export const facilities = [
+  {
+    id: 1,
+    title: 'Hot & Cold Water',
+    description: 'All tents have attached bathrooms with hot and cold running water available in the morning and evening for your comfort and hygiene.',
+    icon: '💧',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop',
+  },
+  {
+    id: 2,
+    title: 'Double/Twin Beds',
+    description: 'All rooms feature comfortable double or twin-size beds with soft carpeting and modern amenities for maximum comfort in the Himalayas.',
+    icon: '🛏️',
+    image: '/bed.jpeg',
+  },
+  {
+    id: 3,
+    title: 'Parking Facilities',
+    description: 'We provide our own car parking facilities at the camp. No need to worry about parking your vehicle outside the premises.',
+    icon: '🚗',
+    image: 'https://images.unsplash.com/photo-1506407963553-b8afe60bd69c?w=800&h=600&fit=crop',
+  },
+  {
+    id: 4,
+    title: 'Home-Cooked Meals',
+    description: 'Enjoy authentic, freshly prepared home-cooked meals featuring local Himalayan cuisine and organic ingredients from our orchards.',
+    icon: '🍳',
+    image: 'https://images.unsplash.com/photo-1495952200908-daf12e91a975?w=800&h=600&fit=crop',
+  },
+  {
+    id: 5,
+    title: 'Attached Bathroom',
+    description: 'Each tent features its own private attached bathroom with essential facilities, ensuring privacy and convenience for your comfort.',
+    icon: '🚿',
+    image: '/bathroom.jpeg',
+  },
+  {
+    id: 6,
+    title: 'Free WiFi',
+    description: 'Stay connected with reliable high-speed WiFi throughout the camp. Share your mountain moments with friends and family back home.',
+    icon: '📶',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+  },
+];
+
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah Mitchell',
+    name: 'Himalayan Nomad',
     from: 'London, UK',
-    content: 'Aryan Valley Camp transformed my understanding of what luxury travel means. Beyond the comfort, the genuine connection with Brokpa culture was unforgettable.',
+    content: '"Explore the less explored places..Aryan valley is beautiful by its culture tradition and the people of the valley.. do visit Aryan valley camp  if you are in ladakh',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop',
     rating: 5,
   },

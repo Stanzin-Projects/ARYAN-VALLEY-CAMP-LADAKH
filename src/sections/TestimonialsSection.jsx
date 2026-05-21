@@ -13,6 +13,7 @@ export default function TestimonialsSection() {
   };
 
   const prev = () => {
+    
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 

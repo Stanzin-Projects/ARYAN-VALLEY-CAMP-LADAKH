@@ -110,6 +110,76 @@ export default function ContactSection() {
               </svg>
               Chat on WhatsApp
             </motion.a>
+
+            {/* Team Members */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 pt-12 border-t border-light-taupe">
+              {/* Owner */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  <img
+                    src="/owner.png"
+                    alt="Phunchok Dorje"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-warm-brown/20 shadow-lg"
+                  />
+                </div>
+                <h4 className="text-xl font-semibold text-warm-brown mb-1">Phunchok Dorje</h4>
+                <p className="text-stone-grey text-sm mb-4">Owner</p>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-center gap-2">
+                    <Phone size={18} className="text-warm-brown" />
+                    <a
+                      href="tel:+919419178890"
+                      className="text-stone-grey text-sm hover:text-warm-brown transition-colors"
+                    >
+                      +91 9419178890
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Phone size={18} className="text-warm-brown" />
+                    <a
+                      href="tel:+919906122573"
+                      className="text-stone-grey text-sm hover:text-warm-brown transition-colors"
+                    >
+                      +91 9906122573
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Manager */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  <img
+                    src="/khas%20pic.png"
+                    alt="Stanzin Khasdup"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-warm-brown/20 shadow-lg"
+                  />
+                </div>
+                <h4 className="text-xl font-semibold text-warm-brown mb-1">Stanzin Khasdup</h4>
+                <p className="text-stone-grey text-sm mb-4">Manager - Operations & Bookings</p>
+                <div className="flex items-center justify-center gap-2">
+                  <Phone size={18} className="text-warm-brown" />
+                  <a
+                    href="tel:+917051298463"
+                    className="text-stone-grey text-sm hover:text-warm-brown transition-colors"
+                  >
+                    +91 7051298463
+                  </a>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Enquiry Form */}
