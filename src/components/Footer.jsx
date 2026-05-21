@@ -215,7 +215,7 @@ export default function Footer() {
         </div>
 
         {/* Text hover effect */}
-        <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 relative z-20">
+        <div className="lg:flex hidden h-[32rem] -mt-52 -mb-36 relative z-20">
           <TextHoverEffect text="Aryan Valley" className="z-50" />
         </div>
 
