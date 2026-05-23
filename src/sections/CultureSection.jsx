@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
+import { Shirt, Flower, Building2, Leaf } from 'lucide-react';
 
 export default function CultureSection() {
   return (
@@ -62,53 +63,57 @@ export default function CultureSection() {
               {[
                 {
                   title: 'Traditional Attire',
-                  emoji: '👗',
+                  icon: Shirt,
                 },
                 {
                   title: 'Floral Headdress',
-                  emoji: '🌸',
+                  icon: Flower,
                 },
                 {
                   title: 'Ancient Customs',
-                  emoji: '🏛️',
+                  icon: Building2,
                 },
                 {
                   title: 'Organic Farming',
-                  emoji: '🌾',
+                  icon: Leaf,
                 },
-              ].map((item, idx) => (
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -4 }}
+                    className="
+                      bg-off-white
+                      border
+                      border-light-taupe/40
+                      rounded-2xl
+                      p-5
+                      shadow-sm
+                      hover:shadow-lg
+                      transition-all
+                      duration-300
+                    "
+                  >
 
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  className="
-                    bg-off-white
-                    border
-                    border-light-taupe/40
-                    rounded-2xl
-                    p-5
-                    shadow-sm
-                    hover:shadow-lg
-                    transition-all
-                    duration-300
-                  "
-                >
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0 mb-3"
+                    >
+                      <IconComponent size={24} className="text-warm-brown" />
+                    </motion.div>
 
-                  <div className="text-4xl mb-3">
-                    {item.emoji}
-                  </div>
+                    <h4 className="text-base font-semibold text-warm-brown">
+                      {item.title}
+                    </h4>
 
-                  <h4 className="text-base font-semibold text-warm-brown">
-                    {item.title}
-                  </h4>
-
-                </motion.div>
-
-              ))}
+                  </motion.div>
+                );
+              })}
 
             </div>
 

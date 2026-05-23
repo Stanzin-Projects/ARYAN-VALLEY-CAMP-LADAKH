@@ -21,7 +21,7 @@ export default function GallerySection() {
         {/* Category Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-3 mb-12"
@@ -85,3 +85,10 @@ export default function GallerySection() {
     </section>
   );
 }
+
+
+
+
+
+
+

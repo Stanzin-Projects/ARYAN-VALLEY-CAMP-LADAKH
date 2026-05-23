@@ -23,12 +23,8 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/favicon.svg"
-                alt="Aryan Valley Camp Logo"
-                className="h-20 w-auto object-contain"
-              />
+            <div className="mb-4">
+              <h2 className="text-xl font-bold text-warm-brown">Aryan Valley Camp</h2>
             </div>
 
             <p className="text-off-white/80 text-sm leading-relaxed">
@@ -155,7 +151,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 text-off-white transition-all duration-300"
               >
                 <FaInstagram size={18} />
               </motion.a>
@@ -166,7 +162,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-blue-600 text-off-white transition-all duration-300"
               >
                 <FaFacebookF size={18} />
               </motion.a>
@@ -177,7 +173,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-warm-brown transition-colors"
+                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-green-500 text-off-white transition-all duration-300"
               >
                 <Send size={18} />
               </motion.a>

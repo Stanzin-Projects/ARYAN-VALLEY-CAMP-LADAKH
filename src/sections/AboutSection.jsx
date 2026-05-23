@@ -134,6 +134,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Mountain, Leaf, Users, Star } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 export default function AboutSection() {
@@ -272,57 +273,61 @@ export default function AboutSection() {
 
                 {[
                   {
-                    icon: '🏔️',
+                    icon: Mountain,
                     title: 'Riverside Location',
                     desc: 'Beside the Indus River',
                   },
 
                   {
-                    icon: '🌿',
+                    icon: Leaf,
                     title: 'Eco-Friendly',
                     desc: 'Sustainable tourism practices',
                   },
 
                   {
-                    icon: '👥',
+                    icon: Users,
                     title: 'Cultural Immersion',
                     desc: 'Genuine Brokpa interaction',
                   },
 
                   {
-                    icon: '⭐',
+                    icon: Star,
                     title: 'Premium Comfort',
                     desc: 'Luxury meets authenticity',
                   },
 
-                ].map((feature, idx) => (
+                ].map((feature, idx) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex gap-4"
+                    >
 
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex gap-4"
-                  >
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        className="w-12 h-12 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <IconComponent size={24} className="text-warm-brown" />
+                      </motion.div>
 
-                    <span className="text-3xl flex-shrink-0">
-                      {feature.icon}
-                    </span>
+                      <div>
+                        <h4 className="font-semibold text-warm-brown mb-1">
+                          {feature.title}
+                        </h4>
 
-                    <div>
-                      <h4 className="font-semibold text-warm-brown mb-1">
-                        {feature.title}
-                      </h4>
+                        <p className="text-sm text-stone-grey">
+                          {feature.desc}
+                        </p>
+                      </div>
 
-                      <p className="text-sm text-stone-grey">
-                        {feature.desc}
-                      </p>
-                    </div>
-
-                  </motion.div>
-
-                ))}
+                    </motion.div>
+                  );
+                })}
 
               </div>
 

@@ -1,7 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import * as LucideIcons from 'lucide-react';
 
 export default function ExperienceCard({ title, description, image, icon }) {
+  // Get the icon component from lucide-react
+  const IconComponent = LucideIcons[icon];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +23,14 @@ export default function ExperienceCard({ title, description, image, icon }) {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
-        <div className="absolute top-4 right-4 text-4xl">{icon}</div>
+        {IconComponent && (
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0"
+          >
+            <IconComponent size={24} className="text-warm-brown" />
+          </motion.div>
+        )}
       </div>
 
       {/* Content */}

@@ -149,6 +149,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Calendar, Users, Camera } from 'lucide-react';
 
 import SectionHeading from '../components/SectionHeading';
 import FestivalCard from '../components/FestivalCard';
@@ -231,61 +232,65 @@ export default function FestivalsSection() {
 
           {[
             {
-              icon: '📅',
+              icon: Calendar,
               title: 'Plan Ahead',
               desc: 'Book 2-3 months in advance for best availability',
             },
 
             {
-              icon: '👥',
+              icon: Users,
               title: 'Group Experiences',
               desc: 'Special packages for groups of 10+',
             },
 
             {
-              icon: '📸',
+              icon: Camera,
               title: 'Photography Opportunities',
               desc: 'Capture unforgettable festival moments and traditions',
             },
 
-          ].map((item, idx) => (
+          ].map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + idx * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="
+                  p-6
+                  bg-off-white
+                  rounded-2xl
+                  text-center
+                  shadow-sm
+                  hover:shadow-lg
+                  transition-all
+                  duration-300
+                  border
+                  border-light-taupe/30
+                "
+              >
 
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + idx * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="
-                p-6
-                bg-off-white
-                rounded-2xl
-                text-center
-                shadow-sm
-                hover:shadow-lg
-                transition-all
-                duration-300
-                border
-                border-light-taupe/30
-              "
-            >
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="w-12 h-12 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0 mx-auto mb-4"
+                >
+                  <IconComponent size={24} className="text-warm-brown" />
+                </motion.div>
 
-              <div className="text-4xl mb-4">
-                {item.icon}
-              </div>
+                <h4 className="font-semibold text-warm-brown mb-2 text-lg">
+                  {item.title}
+                </h4>
 
-              <h4 className="font-semibold text-warm-brown mb-2 text-lg">
-                {item.title}
-              </h4>
+                <p className="text-sm text-stone-grey leading-6">
+                  {item.desc}
+                </p>
 
-              <p className="text-sm text-stone-grey leading-6">
-                {item.desc}
-              </p>
-
-            </motion.div>
-
-          ))}
+              </motion.div>
+            );
+          })}
 
         </motion.div>
 
