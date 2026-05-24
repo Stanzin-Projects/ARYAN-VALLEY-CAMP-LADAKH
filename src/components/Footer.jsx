@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { smoothScroll } from '../utils/helpers';
 import { TextHoverEffect, FooterBackgroundGradient } from './ui/hover-footer';
 
 import {
@@ -9,6 +11,14 @@ import {
 } from 'react-icons/fa';
 
 export default function Footer() {
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const navigate = useNavigate();
+
+  const handleQuickLinkClick = (link) => {
+    const id = link.toLowerCase();
+    smoothScroll(id);
+  };
+
   return (
     <footer className="bg-deep-brown text-off-white py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
@@ -46,39 +56,39 @@ export default function Footer() {
 
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="#home"
-                  className="text-off-white/80 hover:text-warm-brown transition-colors"
+                <button
+                  onClick={() => handleQuickLinkClick('Home')}
+                  className="text-off-white/80 hover:text-warm-brown transition-colors cursor-pointer text-left"
                 >
                   Home
-                </a>
+                </button>
               </li>
 
               <li>
-                <a
-                  href="#about"
-                  className="text-off-white/80 hover:text-warm-brown transition-colors"
+                <button
+                  onClick={() => handleQuickLinkClick('About')}
+                  className="text-off-white/80 hover:text-warm-brown transition-colors cursor-pointer text-left"
                 >
                   About
-                </a>
+                </button>
               </li>
 
               <li>
-                <a
-                  href="#facilities"
-                  className="text-off-white/80 hover:text-warm-brown transition-colors"
+                <button
+                  onClick={() => handleQuickLinkClick('Facilities')}
+                  className="text-off-white/80 hover:text-warm-brown transition-colors cursor-pointer text-left"
                 >
                   Facilities
-                </a>
+                </button>
               </li>
 
               <li>
-                <a
-                  href="#contact"
-                  className="text-off-white/80 hover:text-warm-brown transition-colors"
+                <button
+                  onClick={() => handleQuickLinkClick('Contact')}
+                  className="text-off-white/80 hover:text-warm-brown transition-colors cursor-pointer text-left"
                 >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </motion.div>
@@ -147,35 +157,65 @@ export default function Footer() {
 
               {/* Instagram */}
               <motion.a
-                href="#"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 text-off-white transition-all duration-300"
+                whileHover={{ scale: 1.15 }}
+                onMouseEnter={() => setHoveredIcon('instagram')}
+                onMouseLeave={() => setHoveredIcon(null)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+                  hoveredIcon === 'instagram'
+                    ? 'bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 shadow-lg shadow-pink-500/50'
+                    : 'bg-warm-brown/20 hover:bg-warm-brown/30'
+                }`}
               >
-                <FaInstagram size={18} />
+                <FaInstagram size={20} className={`${
+                  hoveredIcon === 'instagram'
+                    ? 'text-white drop-shadow-lg'
+                    : 'text-off-white'
+                } transition-all duration-300`} />
               </motion.a>
 
               {/* Facebook */}
               <motion.a
-                href="#"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-blue-600 text-off-white transition-all duration-300"
+                whileHover={{ scale: 1.15 }}
+                onMouseEnter={() => setHoveredIcon('facebook')}
+                onMouseLeave={() => setHoveredIcon(null)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+                  hoveredIcon === 'facebook'
+                    ? 'bg-blue-600 shadow-lg shadow-blue-600/50'
+                    : 'bg-warm-brown/20 hover:bg-warm-brown/30'
+                }`}
               >
-                <FaFacebookF size={18} />
+                <FaFacebookF size={20} className={`${
+                  hoveredIcon === 'facebook'
+                    ? 'text-white drop-shadow-lg'
+                    : 'text-off-white'
+                } transition-all duration-300`} />
               </motion.a>
 
-              {/* Message */}
+              {/* WhatsApp */}
               <motion.a
                 href="https://wa.me/919419178890"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-warm-brown/20 flex items-center justify-center hover:bg-green-500 text-off-white transition-all duration-300"
+                whileHover={{ scale: 1.15 }}
+                onMouseEnter={() => setHoveredIcon('whatsapp')}
+                onMouseLeave={() => setHoveredIcon(null)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+                  hoveredIcon === 'whatsapp'
+                    ? 'bg-green-500 shadow-lg shadow-green-500/50'
+                    : 'bg-warm-brown/20 hover:bg-warm-brown/30'
+                }`}
               >
-                <Send size={18} />
+                <Send size={20} className={`${
+                  hoveredIcon === 'whatsapp'
+                    ? 'text-white drop-shadow-lg'
+                    : 'text-off-white'
+                } transition-all duration-300`} />
               </motion.a>
 
             </div>
@@ -221,3 +261,13 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
+
+
+
+
+
+
+

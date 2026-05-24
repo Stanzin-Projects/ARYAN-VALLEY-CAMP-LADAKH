@@ -77,8 +77,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function FestivalCard({
+  id,
   title,
   season,
   description,
@@ -87,22 +89,24 @@ export default function FestivalCard({
   activities,
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="
-        group
-        rounded-2xl
-        overflow-hidden
-        bg-off-white
-        shadow-lg
-        hover:shadow-2xl
-        transition-all
-        duration-500
-      "
-    >
+    <Link to={`/festival/${id}`} className="no-underline">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="
+          group
+          rounded-2xl
+          overflow-hidden
+          bg-off-white
+          shadow-lg
+          hover:shadow-2xl
+          transition-all
+          duration-500
+          h-full
+        "
+      >
 
       {/* Image Section */}
       <div className="relative overflow-hidden h-[280px] md:h-[340px]">
@@ -190,5 +194,6 @@ export default function FestivalCard({
 
       </div>
     </motion.div>
+    </Link>
   );
 }

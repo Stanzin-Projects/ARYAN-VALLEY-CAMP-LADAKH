@@ -37,14 +37,6 @@ export default function ExperienceCard({ title, description, image, icon }) {
       <div className="p-6">
         <h3 className="text-xl font-semibold text-warm-brown mb-3 font-serif">{title}</h3>
         <p className="text-stone-grey text-sm leading-relaxed line-clamp-3">{description}</p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="mt-4 inline-flex items-center text-warm-brown font-medium text-sm group-hover:translate-x-2 transition-transform"
-        >
-          Learn More →
-        </motion.div>
       </div>
     </motion.div>
   );

@@ -16,6 +16,16 @@ export default function FestivalDetailPage() {
     window.scrollTo(0, 0);
   }, [id]);
 
+  const handleContactClick = () => {
+    navigate('/', { replace: true });
+    setTimeout(() => {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   if (!festival) {
     return (
       <div className="min-h-screen bg-off-white flex flex-col">
@@ -45,7 +55,7 @@ export default function FestivalDetailPage() {
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          onClick={() => navigate('/#festivals')}
+          onClick={() => navigate('/')}
           className="fixed top-24 left-6 z-30 flex items-center gap-2 text-warm-brown hover:text-deep-brown transition-colors duration-300 font-semibold"
         >
           <ArrowLeft size={20} />
@@ -187,13 +197,13 @@ export default function FestivalDetailPage() {
             <div className="flex flex-col md:flex-row gap-4">
               <Button
                 variant="primary"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) || navigate('/#contact')}
+                onClick={handleContactClick}
               >
                 Send Enquiry
               </Button>
               <Button
                 variant="secondary"
-                onClick={() => navigate('/#contact')}
+                onClick={handleContactClick}
               >
                 Contact Us
               </Button>

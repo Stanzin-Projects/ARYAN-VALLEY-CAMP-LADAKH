@@ -210,11 +210,14 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { smoothScroll } from '../utils/helpers';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     'Home',
@@ -246,7 +249,16 @@ export default function Navbar() {
   /* Navigation Click */
   const handleNavClick = (link) => {
     const id = link.toLowerCase();
-    smoothScroll(id);
+    
+    // If on a detail page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        smoothScroll(id);
+      }, 100);
+    } else {
+      smoothScroll(id);
+    }
     setIsOpen(false);
   };
 
@@ -270,13 +282,14 @@ export default function Navbar() {
         className="
           max-w-7xl
           mx-auto
-          px-5
+          px-4
+          md:px-6
           lg:px-8
           py-2
           flex
           items-center
           justify-between
-          gap-4
+          gap-3
         "
       >
 
@@ -297,22 +310,21 @@ export default function Navbar() {
             src="/favicon.svg"
             alt="Aryan Valley Camp Logo"
             className="
-              h-20
-              md:h-24
-              lg:h-32
-              xl:h-40
+              h-12
+              md:h-16
+              lg:h-20
               w-auto
               object-contain
               transition-all
               duration-500
               hover:scale-105
-              drop-shadow-2xl
+              drop-shadow-lg
             "
           />
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center justify-center gap-4 lg:gap-8 flex-1">
+        <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-8 flex-1">
 
           {navLinks.map((link) => (
             <button
@@ -321,7 +333,52 @@ export default function Navbar() {
               className={`
                 relative
                 text-xs
-                lg:text-sm
+                xl:text-sm
+                font-semibold
+                tracking-wide
+                uppercase
+                whitespace-nowrap
+                transition-all
+                duration-300
+                after:absolute
+                after:left-0
+                after:-bottom-1
+                after:h-[2px]
+                after:w-0
+                after:transition-all
+                after:duration-300
+                hover:after:w-full
+                ${
+                  scrolled
+                    ? `
+                      text-stone-grey
+                      hover:text-warm-brown
+                      after:bg-warm-brown
+                    `
+                    : `
+                      text-white
+                      hover:text-beige
+                      after:bg-beige
+                    `
+                }
+              `}
+            >
+              {link}
+            </button>
+          ))}
+
+        </div>
+
+        {/* Tablet Menu */}
+        <div className="hidden md:flex lg:hidden items-center justify-end gap-2 flex-1 flex-wrap">
+
+          {navLinks.slice(0, 4).map((link) => (
+            <button
+              key={link}
+              onClick={() => handleNavClick(link)}
+              className={`
+                relative
+                text-xs
                 font-semibold
                 tracking-wide
                 uppercase
@@ -372,7 +429,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
       </div>
@@ -397,9 +454,10 @@ export default function Navbar() {
           border-light-taupe
           shadow-xl
           ${isOpen ? 'block' : 'hidden'}
+          z-40
         `}
       >
-        <div className="flex flex-col gap-3 p-5">
+        <div className="flex flex-col gap-2 p-4 max-h-[60vh] overflow-y-auto">
 
           {navLinks.map((link) => (
             <button
@@ -408,15 +466,16 @@ export default function Navbar() {
               className="
                 text-left
                 px-4
-                py-3
-                text-sm
+                py-2.5
+                text-xs
+                sm:text-sm
                 font-semibold
                 tracking-wide
                 uppercase
                 text-stone-grey
                 hover:bg-beige
                 hover:text-warm-brown
-                rounded-xl
+                rounded-lg
                 transition-all
                 duration-300
               "
