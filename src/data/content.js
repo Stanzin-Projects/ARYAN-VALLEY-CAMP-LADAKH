@@ -173,18 +173,9 @@ export const galleryCategories = [
     id: 1,
     name: 'Nature',
     images: [
-      { id: 1, url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop', title: 'Mountain Vista' },
-      { id: 2, url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop', title: 'River Flow' },
-      { id: 3, url: 'https://images.unsplash.com/photo-1465056836ba7-f2fe33b6371b?w=400&h=400&fit=crop', title: 'Valley Dawn' },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Culture',
-    images: [
-      { id: 1, url: 'https://images.unsplash.com/photo-1533028365561-7fd151b46e6b?w=400&h=400&fit=crop', title: 'Brokpa Tradition' },
-      { id: 2, url: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop', title: 'Dance Performance' },
-      { id: 3, url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop', title: 'Local Life' },
+      { id: 1, url: '/nature 1.jpeg', title: 'Mountain Vista' },
+      { id: 2, url: '/nature 2.jpeg', title: 'River Flow' },
+      { id: 3, url: '/nature.jpeg', title: 'Valley Dawn' },
     ],
   },
   {

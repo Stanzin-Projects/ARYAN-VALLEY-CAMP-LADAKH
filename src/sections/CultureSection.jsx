@@ -156,7 +156,7 @@ export default function CultureSection() {
               "
             >
               <img
-                src="/culture1.jpeg"
+                src="/culture1.jpg"
                 alt="Brokpa Culture"
                 className="
                   w-full
@@ -231,7 +231,7 @@ export default function CultureSection() {
               "
             >
               <img
-                src="/culture4.jpeg"
+                src="/culture4.jpg"
                 alt="Village Life"
                 className="
                   w-full
