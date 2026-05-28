@@ -130,7 +130,7 @@ export default function HeroSection() {
            <span className="text-warm-brown font-medium tracking-wide">
            Hosted by 
            <span className="font-bold">
-           {' '}Aryan Valley Camp |Lasthiang| 🏕️
+           {' '}Aryan Valley Camp |Lasthiang|  Since 2012 
           </span>
          </span>
           <br />

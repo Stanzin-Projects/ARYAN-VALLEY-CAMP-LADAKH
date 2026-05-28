@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
-import { smoothScroll } from '../utils/helpers';
 import { TextHoverEffect, FooterBackgroundGradient } from './ui/hover-footer';
 
 import {
@@ -15,7 +14,12 @@ export default function Footer() {
 
   /* Footer Navigation */
   const handleQuickLinkClick = (sectionId) => {
-    smoothScroll(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn(`Section with ID "${sectionId}" not found`);
+    }
   };
 
   return (
@@ -59,7 +63,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('home')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('home');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -74,7 +81,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('about')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('about');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -89,7 +99,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('culture')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('culture');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -104,7 +117,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('experiences')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('experiences');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -119,7 +135,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('festivals')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('festivals');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -134,7 +153,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('gallery')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('gallery');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -149,7 +171,10 @@ export default function Footer() {
 
               <li>
                 <button
-                  onClick={() => handleQuickLinkClick('contact')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleQuickLinkClick('contact');
+                  }}
                   className="
                     text-off-white/80
                     hover:text-warm-brown
@@ -390,7 +415,7 @@ export default function Footer() {
         {/* Text Hover Effect */}
         <div className="hidden lg:flex h-[32rem] -mt-52 -mb-36 relative z-20">
           <TextHoverEffect
-            text="Aryan Valley"
+            text="Aryan Valley Camp Ladakh  "
             className="z-50"
           />
         </div>

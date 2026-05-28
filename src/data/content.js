@@ -233,3 +233,4 @@ export const siteContent = {
     Their customs blend spirituality, organic farming, and hospitality in a harmonious balance that has been preserved through generations. At Aryan Valley Camp, we celebrate and honor their culture through authentic experiences and genuine community interaction.`,
   },
 };
+
