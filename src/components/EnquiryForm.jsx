@@ -1,11 +1,17 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import './calendar.css';
 
 import {
   CheckCircle,
   AlertCircle,
   Send,
+  Calendar as CalendarIcon,
+  X,
 } from 'lucide-react';
 
 import {
@@ -19,10 +25,13 @@ export default function EnquiryForm() {
     phone: '',
     email: '',
     guests: '',
-    dates: '',
     message: '',
   });
 
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [calendarMode, setCalendarMode] = useState('start'); // 'start' or 'end'
   const [status, setStatus] = useState('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -39,6 +48,32 @@ export default function EnquiryForm() {
       ...prev,
       [name]: value,
     }));
+  };
+
+  /* Format Date */
+  const formatDate = (date) => {
+    if (!date) return '';
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  /* Handle Calendar Date */
+  const handleCalendarDate = (date) => {
+    if (calendarMode === 'start') {
+      setStartDate(date);
+      setCalendarMode('end');
+    } else {
+      if (date < startDate) {
+        setEndDate(startDate);
+        setStartDate(date);
+      } else {
+        setEndDate(date);
+      }
+      setShowCalendar(false);
+    }
   };
 
   /* Submit Form */
@@ -68,14 +103,16 @@ export default function EnquiryForm() {
       return;
     }
 
-    if (!formData.dates.trim()) {
-      setErrorMsg('Please enter your travel dates');
+    if (!startDate || !endDate) {
+      setErrorMsg('Please select your travel dates');
       return;
     }
 
     try {
 
       setStatus('loading');
+
+      const formattedDates = `${formatDate(startDate)} - ${formatDate(endDate)}`;
 
       /* EmailJS Send */
       await emailjs.send(
@@ -86,7 +123,7 @@ export default function EnquiryForm() {
           phone: formData.phone,
           email: formData.email,
           guests: formData.guests,
-          dates: formData.dates,
+          dates: formattedDates,
           message: formData.message,
         },
         '9q0tWj-Lh1TcVwJfI'
@@ -100,9 +137,11 @@ export default function EnquiryForm() {
         phone: '',
         email: '',
         guests: '',
-        dates: '',
         message: '',
       });
+      setStartDate(null);
+      setEndDate(null);
+      setCalendarMode('start');
 
       setTimeout(() => {
         setStatus('idle');
@@ -282,31 +321,125 @@ export default function EnquiryForm() {
         </div>
 
         {/* Dates */}
-        <div className="mb-5">
+        <div className="mb-6">
 
           <label className="block text-sm font-medium text-warm-brown mb-2">
             Travel Dates *
           </label>
 
-          <input
-            type="text"
-            name="dates"
-            value={formData.dates}
-            onChange={handleChange}
-            placeholder="May 15 - May 22, 2026"
-            disabled={status === 'loading'}
-            className="
-              w-full
-              px-4
-              py-3
-              rounded-xl
-              border
-              border-light-taupe
-              focus:border-warm-brown
-              focus:outline-none
-              transition-all
-            "
-          />
+          <div className="relative">
+            <motion.button
+              type="button"
+              onClick={() => setShowCalendar(!showCalendar)}
+              disabled={status === 'loading'}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="
+                w-full
+                px-4
+                py-3
+                rounded-xl
+                border
+                border-light-taupe
+                focus:border-warm-brown
+                focus:outline-none
+                transition-all
+                bg-white
+                text-left
+                flex
+                items-center
+                justify-between
+                disabled:opacity-50
+              "
+            >
+              <span className={startDate && endDate ? 'text-warm-brown font-medium' : 'text-gray-400'}>
+                {startDate && endDate
+                  ? `${formatDate(startDate)} → ${formatDate(endDate)}`
+                  : 'Select dates'}
+              </span>
+              <CalendarIcon size={18} className="text-warm-brown" />
+            </motion.button>
+
+            {/* Calendar Popup */}
+            {showCalendar && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="
+                  absolute
+                  top-full
+                  left-0
+                  mt-2
+                  bg-white
+                  rounded-xl
+                  shadow-xl
+                  p-4
+                  z-50
+                  border
+                  border-light-taupe
+                "
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-sm font-semibold text-warm-brown">
+                    {calendarMode === 'start' ? 'Check-in Date' : 'Check-out Date'}
+                  </h4>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowCalendar(false);
+                      setCalendarMode('start');
+                    }}
+                    className="text-gray-400 hover:text-gray-600"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+
+                <Calendar
+                  value={calendarMode === 'start' ? startDate : endDate}
+                  onChange={handleCalendarDate}
+                  minDate={calendarMode === 'start' ? new Date() : startDate}
+                  className="calendar-custom"
+                />
+
+                {startDate && endDate && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="mt-4 text-center text-sm text-stone-grey"
+                  >
+                    <p className="font-medium text-warm-brown">
+                      {Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24))} nights
+                    </p>
+                  </motion.div>
+                )}
+              </motion.div>
+            )}
+
+            {/* Clear Dates Button */}
+            {(startDate || endDate) && (
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setStartDate(null);
+                  setEndDate(null);
+                  setCalendarMode('start');
+                }}
+                className="
+                  mt-2
+                  text-xs
+                  text-warm-brown
+                  hover:text-deep-brown
+                  font-semibold
+                  transition-colors
+                "
+              >
+                Clear dates
+              </motion.button>
+            )}
+          </div>
 
         </div>
 
@@ -466,8 +599,5 @@ export default function EnquiryForm() {
     </div>
   );
 }
-
-
-
 
 

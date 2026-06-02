@@ -240,15 +240,18 @@ export default function AboutSection() {
             <div className="space-y-6">
 
               <p className="text-lg text-stone-grey leading-relaxed">
-                Nestled beside the pristine Indus River in Ladakh's Dah-Hanu
-                region, Aryan Valley Camp is more than a destination —
-                it's a portal to an ancient world.
+               Since 2012, Aryan Valley Camp has been offering travelers an unforgettable
+                escape in the heart of Ladakh’s breathtaking Dah-Hanu region, located 
+                approximately 170 km from Leh along the serene banks of the Indus River. 
               </p>
 
               <p className="text-lg text-stone-grey leading-relaxed">
-                Our riverside campsite is thoughtfully designed to blend
-                seamlessly with the natural landscape, offering authentic
-                cultural immersion without compromising on comfort.
+               More than just a campsite, it is a gateway to the ancient heritage and living traditions
+                of the unique Brokpa community.
+                Thoughtfully designed to blend with the natural landscape and overlooking the magnificent Indus Gorge,
+                 our camp combines authentic cultural experiences with comfort, tranquility, and warm Ladakhi hospitality.
+
+
               </p>
 
               <p className="text-lg text-stone-grey leading-relaxed">

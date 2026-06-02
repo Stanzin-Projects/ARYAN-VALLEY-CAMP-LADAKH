@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
@@ -356,7 +357,7 @@ export default function Footer() {
 
               {/* WhatsApp */}
               <motion.a
-                href="https://wa.me/919419178890"
+                href="https://wa.me/917051298463"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.12 }}
@@ -413,7 +414,7 @@ export default function Footer() {
         </div>
 
         {/* Text Hover Effect */}
-        <div className="hidden lg:flex h-[32rem] -mt-52 -mb-36 relative z-20">
+        <div className="hidden lg:flex h-[32rem] -mt-52 -mb-36 relative z-20 pointer-events-none">
           <TextHoverEffect
             text="Aryan Valley Camp Ladakh  "
             className="z-50"

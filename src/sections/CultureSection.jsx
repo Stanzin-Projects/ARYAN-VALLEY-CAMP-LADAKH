@@ -35,24 +35,33 @@ export default function CultureSection() {
             <div className="space-y-6">
 
               <p className="text-lg leading-8 text-stone-grey">
-                The Brokpa community of Aryan Valley is one of the most unique
-                and culturally preserved Indo-Aryan tribes in the Himalayas.
-                Their centuries-old traditions, vibrant floral headdresses,
-                handcrafted attire, and deep spiritual connection to nature
-                continue to define their extraordinary identity.
+                Aryan Valley in Ladakh is home to the Brokpa people,
+                 a unique indigenous community known for their rich cultural heritage, 
+                 traditional attire, vibrant festivals, and deep-rooted connection to the 
+                 Himalayan landscape. Surrounded by majestic mountains and nourished by the Indus River,
+                  the valley offers visitors a rare opportunity to experience one of Ladakh's most distinctive 
+                  living cultures.
+                  Dha is the cultural heart of the Aryan Valley and one of the most recognized Brokpa settlements.
+                   The village is known for preserving traditional customs, language, and the iconic floral headgear
+                    worn during festivals and celebrations.
+
+
               </p>
 
               <p className="text-lg leading-8 text-stone-grey">
-                Living amidst the breathtaking mountains of Ladakh, the Brokpa
-                people maintain a harmonious lifestyle rooted in organic farming,
-                hospitality, celebration, and ancestral wisdom passed through
-                generations.
+               Garkhon is a picturesque village famous for its fertile fields, apricot orchards, 
+               and traditional stone houses. It provides an authentic glimpse into the agricultural 
+               lifestyle and hospitality of the Brokpa community.
+                Dartse (Darchik) is among the largest Brokpa settlements, renowned for its scenic beauty, 
+                rich traditions, and well-preserved cultural heritage. The village serves as an ideal destination 
+                for travelers seeking meaningful cultural experiences amidst the breathtaking landscapes of Ladakh.
+
               </p>
 
               <p className="text-lg leading-8 text-stone-grey">
-                At Aryan Valley Camp, guests are invited to experience this rich
-                heritage through authentic cultural interactions, traditional
-                celebrations, local cuisine, and immersive village experiences.
+                Together, Dha, Garkhon, and Dartse form the cultural core of Aryan Valley, offering visitors a unique
+                 blend of history, tradition, and natural beauty that makes this region one of Ladakh's most fascinating
+                  destinations.
               </p>
 
             </div>
