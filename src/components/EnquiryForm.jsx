@@ -504,26 +504,101 @@ export default function EnquiryForm() {
         {status === 'success' && (
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="
-              mb-4
-              flex
-              gap-2
-              items-start
-              bg-green-50
-              text-green-600
-              p-4
-              rounded-xl
-              text-sm
+              mb-6
+              bg-gradient-to-br
+              from-green-50
+              to-emerald-50
+              border
+              border-green-200
+              p-6
+              rounded-2xl
+              text-center
+              overflow-hidden
+              relative
             "
           >
 
-            <CheckCircle size={18} />
+            {/* Animated Background Glow */}
+            <motion.div
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-r
+                from-transparent
+                via-white
+                to-transparent
+                opacity-0
+              "
+              animate={{ opacity: [0, 0.5, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
 
-            <p>
-              Thank you! Your enquiry has been submitted.
-            </p>
+            {/* Content Container */}
+            <div className="relative z-10">
+
+              {/* Checkmark Icon */}
+              <motion.div
+                className="flex justify-center mb-3"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <CheckCircle size={48} className="text-green-600" />
+                </motion.div>
+              </motion.div>
+
+              {/* Main Message */}
+              <motion.h3
+                className="
+                  text-lg
+                  font-bold
+                  text-green-700
+                  mb-2
+                  font-serif
+                "
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                Thank you for your enquiry!
+              </motion.h3>
+
+              {/* Secondary Message */}
+              <motion.div
+                className="space-y-2"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                <p className="text-sm text-green-600">
+                  We'll get back to you in
+                </p>
+                <motion.p
+                  className="
+                    text-xl
+                    font-bold
+                    text-green-700
+                    font-serif
+                  "
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  8 working hours
+                </motion.p>
+                <p className="text-xs text-green-600 mt-2">
+                  Check your email for updates
+                </p>
+              </motion.div>
+
+            </div>
 
           </motion.div>
 

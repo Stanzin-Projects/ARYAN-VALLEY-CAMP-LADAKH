@@ -1,9 +1,27 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Play, Pause } from 'lucide-react';
 
 export default function GalleryGrid({ images }) {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [playingVideoId, setPlayingVideoId] = useState(null);
+  const videoRefs = {};
+
+  const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
+
+  const toggleVideoPlay = (e, imageId) => {
+    e.stopPropagation();
+    const video = videoRefs[imageId];
+    if (video) {
+      if (video.paused) {
+        video.play();
+        setPlayingVideoId(imageId);
+      } else {
+        video.pause();
+        setPlayingVideoId(null);
+      }
+    }
+  };
 
   return (
     <>
@@ -20,11 +38,34 @@ export default function GalleryGrid({ images }) {
             className="group cursor-pointer rounded-lg overflow-hidden h-64"
           >
             <div className="relative w-full h-full overflow-hidden bg-gray-200">
-              <img
-                src={image.url}
-                alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              {isVideo(image.url) ? (
+                <>
+                  <video
+                    ref={(el) => (videoRefs[image.id] = el)}
+                    src={image.url}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    preload="metadata"
+                  />
+                  <button
+                    onClick={(e) => toggleVideoPlay(e, image.id)}
+                    className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300"
+                  >
+                    <div className="bg-warm-brown/90 hover:bg-warm-brown p-4 rounded-full transition-all duration-300 transform group-hover:scale-110">
+                      {playingVideoId === image.id ? (
+                        <Pause size={32} className="text-off-white" />
+                      ) : (
+                        <Play size={32} className="text-off-white ml-1" />
+                      )}
+                    </div>
+                  </button>
+                </>
+              ) : (
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              )}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="text-off-white font-semibold text-center px-4">{image.title}</p>
@@ -50,11 +91,20 @@ export default function GalleryGrid({ images }) {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-4xl w-full"
           >
-            <img
-              src={selectedImage.url}
-              alt={selectedImage.title}
-              className="w-full h-auto rounded-lg"
-            />
+            {isVideo(selectedImage.url) ? (
+              <video
+                src={selectedImage.url}
+                controls
+                className="w-full h-auto rounded-lg"
+                autoPlay
+              />
+            ) : (
+              <img
+                src={selectedImage.url}
+                alt={selectedImage.title}
+                className="w-full h-auto rounded-lg"
+              />
+            )}
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute -top-12 right-0 text-off-white hover:text-gray-300 transition-colors"

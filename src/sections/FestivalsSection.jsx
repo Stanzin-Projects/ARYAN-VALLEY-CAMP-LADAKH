@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Users, Camera } from 'lucide-react';
@@ -13,7 +7,7 @@ import FestivalCard from '../components/FestivalCard';
 
 import { festivals } from '../data/content';
 
-export default function FestivalsSection() {
+export default function FestivalsSection() { 
   return (
     <section
       id="festivals"

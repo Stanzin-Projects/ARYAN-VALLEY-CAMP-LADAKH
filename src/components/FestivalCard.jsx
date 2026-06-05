@@ -72,25 +72,21 @@ export default function FestivalCard({
           />
         )}
 
-        {!video && (
-          <>
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-            {/* Text on Image */}
-            <div className="absolute bottom-5 left-5 right-5">
+        {/* Text on Image/Video */}
+        <div className="absolute bottom-5 left-5 right-5">
 
-              <p className="text-sky-blue text-sm font-semibold tracking-wide mb-2">
-                {season}
-              </p>
+          <p className="text-sky-blue text-sm font-semibold tracking-wide mb-2">
+            {season}
+          </p>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-white font-serif leading-tight">
-                {title}
-              </h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white font-serif leading-tight">
+            {title}
+          </h3>
 
-            </div>
-          </>
-        )}
+        </div>
       </div>
 
       {/* Content */}

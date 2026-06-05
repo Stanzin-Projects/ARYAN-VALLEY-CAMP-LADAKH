@@ -7,6 +7,7 @@ import { smoothScroll } from '../utils/helpers';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -22,34 +23,30 @@ export default function Navbar() {
     'Contact',
   ];
 
-  /* Detect Scroll */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 80);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () =>
+      window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  /* Navigation Click */
   const handleNavClick = (link) => {
     const id = link.toLowerCase();
-    
-    // If on a detail page, navigate to home first
+
     if (location.pathname !== '/') {
       navigate('/');
+
       setTimeout(() => {
         smoothScroll(id);
       }, 100);
     } else {
       smoothScroll(id);
     }
+
     setIsOpen(false);
   };
 
@@ -58,8 +55,9 @@ export default function Navbar() {
       className={`
         fixed
         top-0
-        z-50
+        left-0
         w-full
+        z-50
         transition-all
         duration-500
         ${
@@ -76,61 +74,67 @@ export default function Navbar() {
           px-4
           md:px-6
           lg:px-8
-          py-2
           flex
           items-center
           justify-between
-          gap-3
         "
       >
-
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          onClick={() => handleNavClick('Home')}
           className="
             cursor-pointer
             flex
             items-center
+            mr-8
             flex-shrink-0
           "
-          onClick={() => handleNavClick('Home')}
         >
           <img
             src="/favicon.svg"
             alt="Aryan Valley Camp Logo"
-            className="
-              h-12
-              md:h-16
-              lg:h-20
+            className={`
               w-auto
               object-contain
               transition-all
               duration-500
               hover:scale-105
-              drop-shadow-lg
-            "
+              ${
+                scrolled
+                  ? 'h-16 md:h-20 lg:h-24'
+                  : 'h-20 md:h-24 lg:h-32'
+              }
+            `}
           />
         </motion.div>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-8 flex-1">
-
+        {/* Desktop Navigation */}
+        <div
+          className="
+            hidden
+            lg:flex
+            items-center
+            gap-6
+            xl:gap-8
+          "
+        >
           {navLinks.map((link) => (
             <button
               key={link}
               onClick={() => handleNavClick(link)}
               className={`
                 relative
-                text-xs
-                xl:text-sm
+                text-sm
                 font-semibold
-                tracking-wide
                 uppercase
+                tracking-wide
                 whitespace-nowrap
                 transition-all
                 duration-300
+
                 after:absolute
                 after:left-0
                 after:-bottom-1
@@ -138,7 +142,9 @@ export default function Navbar() {
                 after:w-0
                 after:transition-all
                 after:duration-300
+
                 hover:after:w-full
+
                 ${
                   scrolled
                     ? `
@@ -157,52 +163,40 @@ export default function Navbar() {
               {link}
             </button>
           ))}
-
         </div>
 
-        {/* Tablet Menu */}
-        <div className="hidden md:flex lg:hidden items-center justify-end gap-2 flex-1 flex-wrap">
-
+        {/* Tablet Navigation */}
+        <div
+          className="
+            hidden
+            md:flex
+            lg:hidden
+            items-center
+            gap-4
+            flex-wrap
+          "
+        >
           {navLinks.slice(0, 4).map((link) => (
             <button
               key={link}
               onClick={() => handleNavClick(link)}
               className={`
-                relative
                 text-xs
                 font-semibold
-                tracking-wide
                 uppercase
-                whitespace-nowrap
+                tracking-wide
                 transition-all
                 duration-300
-                after:absolute
-                after:left-0
-                after:-bottom-1
-                after:h-[2px]
-                after:w-0
-                after:transition-all
-                after:duration-300
-                hover:after:w-full
                 ${
                   scrolled
-                    ? `
-                      text-stone-grey
-                      hover:text-warm-brown
-                      after:bg-warm-brown
-                    `
-                    : `
-                      text-white
-                      hover:text-beige
-                      after:bg-beige
-                    `
+                    ? 'text-stone-grey hover:text-warm-brown'
+                    : 'text-white hover:text-beige'
                 }
               `}
             >
               {link}
             </button>
           ))}
-
         </div>
 
         {/* Mobile Menu Button */}
@@ -220,9 +214,12 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? (
+            <X size={28} />
+          ) : (
+            <Menu size={28} />
+          )}
         </button>
-
       </div>
 
       {/* Mobile Menu */}
@@ -245,11 +242,9 @@ export default function Navbar() {
           border-light-taupe
           shadow-xl
           ${isOpen ? 'block' : 'hidden'}
-          z-40
         `}
       >
-        <div className="flex flex-col gap-2 p-4 max-h-[60vh] overflow-y-auto">
-
+        <div className="flex flex-col p-4 gap-2">
           {navLinks.map((link) => (
             <button
               key={link}
@@ -257,12 +252,11 @@ export default function Navbar() {
               className="
                 text-left
                 px-4
-                py-2.5
-                text-xs
-                sm:text-sm
+                py-3
+                text-sm
                 font-semibold
-                tracking-wide
                 uppercase
+                tracking-wide
                 text-stone-grey
                 hover:bg-beige
                 hover:text-warm-brown
@@ -274,7 +268,6 @@ export default function Navbar() {
               {link}
             </button>
           ))}
-
         </div>
       </motion.div>
     </nav>

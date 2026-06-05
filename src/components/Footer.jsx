@@ -275,7 +275,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <motion.a
-                href="https://instagram.com"
+                href="https://www.instagram.com/thearyanvalleycamp/tagged/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.12 }}

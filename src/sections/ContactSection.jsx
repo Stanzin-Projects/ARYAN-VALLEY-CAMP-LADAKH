@@ -200,18 +200,38 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-lg overflow-hidden shadow-lg"
+          className="mt-16 space-y-4"
         >
-          <iframe
-            title="Aryan Valley Camp Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.6534849263!2d76.99347!3d34.387436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38fdefbb0000000%3A0x0!2sAryan%20Valley%2C%20Ladakh!5e0!3m2!1sen!2sin!4v1234567890"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          {/* View on Google Maps Button */}
+          <div className="flex justify-end">
+            <motion.a
+              href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyBwgDECEYjwLSAQg2ODU2ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kb9yFThd0_w4McbMYaUnzotY&daddr=JG43%2BR29,+Village+Beema+Lastyang,+Dah,+Ladakh+194106"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 bg-warm-brown text-off-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-brown transition-colors shadow-md"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+              </svg>
+              View on Google Maps
+            </motion.a>
+          </div>
+
+          {/* Embedded Map */}
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              title="Aryan Valley Camp Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.6534849263!2d76.99347!3d34.387436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38fdefbb0000000%3A0x0!2sAryan%20Valley%2C%20Ladakh!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </motion.div>
       </div>
     </section>

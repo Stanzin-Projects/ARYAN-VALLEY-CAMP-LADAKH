@@ -71,7 +71,7 @@ export const festivals = [
   {
     id: 2,
     title: 'Bon No Na Festival',
-    season: 'September - October',
+    season: 'October - November',
     description: 'Ancient Brokpa spiritual celebration with traditional rituals, local ceremonies, and cultural performances.',
     highlight: 'Sacred traditions and local rituals',
     image: 'https://images.unsplash.com/photo-1533028365561-7fd151b46e6b?w=800&h=600&fit=crop',
@@ -81,10 +81,11 @@ export const festivals = [
   {
     id: 3,
     title: 'Losar Festival',
-    season: 'June - July',
+    season: 'January - February',
     description: 'Celebrate the harvest season with local communities, traditional music, and authentic Himalayan culture.',
     highlight: 'Community celebration of abundance',
-    image: '/losar.jpeg',
+    image: '/WhatsApp Video 2026-04-09 at 7.30.24 PM.mp4',
+    video: '/WhatsApp Video 2026-04-09 at 7.30.24 PM.mp4',
     activities: ['Community harvest', 'Cooking demonstrations', 'Cultural exchanges'],
   },
 ];
@@ -95,7 +96,7 @@ export const facilities = [
     title: 'Hot & Cold Water',
     description: 'All tents have attached bathrooms with hot and cold running water available in the morning and evening for your comfort and hygiene.',
     icon: 'Droplets',
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop',
+    image: 'https://images.pexels.com/photos/12040628/pexels-photo-12040628.jpeg',
   },
   {
     id: 2,
@@ -109,14 +110,14 @@ export const facilities = [
     title: 'Parking Facilities',
     description: 'We provide our own car parking facilities at the camp. No need to worry about parking your vehicle outside the premises.',
     icon: 'Car',
-    image: 'https://images.unsplash.com/photo-1506407963553-b8afe60bd69c?w=800&h=600&fit=crop',
+    image: 'https://images.pexels.com/photos/8862190/pexels-photo-8862190.jpeg',
   },
   {
     id: 4,
     title: 'Home-Cooked Meals',
     description: 'Enjoy authentic, freshly prepared home-cooked meals featuring local Himalayan cuisine and organic ingredients from our orchards.',
     icon: 'Utensils',
-    image: 'https://images.unsplash.com/photo-1495952200908-daf12e91a975?w=800&h=600&fit=crop',
+    image: 'https://images.pexels.com/photos/34616638/pexels-photo-34616638.jpeg',
   },
   {
     id: 5,
@@ -130,7 +131,7 @@ export const facilities = [
     title: 'Free WiFi',
     description: 'Stay connected with reliable high-speed WiFi throughout the camp. Share your mountain moments with friends and family back home.',
     icon: 'Wifi',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    image: 'https://images.pexels.com/photos/7563687/pexels-photo-7563687.jpeg',
   },
 ];
 
@@ -183,22 +184,13 @@ export const galleryCategories = [
     id: 2,
     name: 'Culture',
     images: [
-      { id: 1, url: '/culture1.jpg', title: 'Brokpa Culture' },
-      { id: 2, url: '/culture2.jpg', title: 'Traditional Heritage' },
-      { id: 3, url: '/culture3.jpg', title: 'Cultural Celebration' },
+      { id: 1, url: '/festival1.jpeg', title: 'Festival Celebration' },
+      { id: 2, url: '/clt2.jpeg', title: 'Cultural Heritage' },
+      { id: 3, url: '/festival2.jpeg', title: 'Festival Culture' },
     ],
   },
   {
     id: 3,
-    name: 'Festival',
-    images: [
-      { id: 1, url: '/festival1.jpeg', title: 'Festival Celebration' },
-      { id: 2, url: '/festival.jpg', title: 'Festival Moments' },
-      { id: 3, url: '/festival3.jpeg', title: 'Festival Culture' },
-    ],
-  },
-  {
-    id: 4,
     name: 'Campsite',
     images: [
       { id: 1, url: '/camp.jpg', title: 'Camp Setup' },
@@ -207,7 +199,7 @@ export const galleryCategories = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     name: 'Village Life',
     images: [
       { id: 1, url: '/village 1.jpg', title: 'Village Path' },
