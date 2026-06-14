@@ -6,6 +6,8 @@ export default function ExperienceCard({ title, description, image, icon }) {
   // Get the icon component from lucide-react
   const IconComponent = LucideIcons[icon];
 
+  const isVideo = image && /\.(mp4|webm|ogg)$/i.test(image);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,13 +17,24 @@ export default function ExperienceCard({ title, description, image, icon }) {
       whileHover={{ y: -10 }}
       className="group rounded-lg overflow-hidden bg-off-white shadow-lg hover:shadow-xl transition-all duration-300"
     >
-      {/* Image Container */}
+      {/* Media Container */}
       <div className="relative h-48 md:h-56 overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+        {isVideo ? (
+          <video
+            src={image}
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
         {IconComponent && (
           <motion.div

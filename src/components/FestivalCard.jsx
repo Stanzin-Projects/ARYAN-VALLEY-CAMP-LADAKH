@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 export default function FestivalCard({
   id,
@@ -13,7 +12,7 @@ export default function FestivalCard({
   activities,
 }) {
   return (
-    <Link to={`/festival/${id}`} className="no-underline">
+    <div className="no-underline">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -119,24 +118,8 @@ export default function FestivalCard({
 
         </div>
 
-        {/* Button */}
-        <motion.button
-          whileHover={{ x: 5 }}
-          className="
-            text-warm-brown
-            font-semibold
-            flex
-            items-center
-            gap-2
-            hover:text-deep-brown
-            transition-colors
-          "
-        >
-          Discover Festival →
-        </motion.button>
-
       </div>
     </motion.div>
-    </Link>
+  </div>
   );
 }
