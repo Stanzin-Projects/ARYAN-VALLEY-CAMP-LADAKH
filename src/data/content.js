@@ -163,7 +163,7 @@ export const testimonials = [
   {
   id: 4,
   name: 'Sahil Jamwal',
-  from: 'Milan, Italy',
+  // from: 'Milan, Italy',
   content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
   image: '/review2.png',
   rating: 5,
@@ -171,7 +171,7 @@ export const testimonials = [
 {
   id: 5,
   name: 'Chuskit Dolma',
-  from: 'Milan, Italy',
+  // from: 'Milan, Italy',
   content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
   image: '/review2.png',
   rating: 5,
@@ -179,24 +179,32 @@ export const testimonials = [
 {
   id: 6,
   name: 'Sahil Jamwal',
-  from: 'Milan, Italy',
+  
   content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
-  image: '/review2.png',
+  // image: '/review2.png',
   rating: 5,
 },
 {
   id: 7,
-  name: 'Sahil Jamwal',
-  from: 'Milan, Italy',
-  content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
+  name: 'Varun K',
+  // from: 'Milan, Italy',
+  content: `Had an unpleasant experience! Please read through the entire comment.
+
+First let me start with what's good.
+* Unique / beautiful place
+* clean tents / restrooms
+* Decent food
+* Nice views
+* hot water was available
+* power was provided entire night.`,
   image: '/review2.png',
   rating: 5,
 },
 {
   id: 8,
-  name: 'Sahil Jamwal',
-  from: 'Milan, Italy',
-  content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
+  name: 'Mohad Ali',
+  // from: 'Milan, Italy',
+  content: `In ladakh The tourist love to vist Aryan valley most beautiful place nature Indus river view. handsome people in ladkh and there culture..`,
   image: '/review2.png',
   rating: 5,
 },
