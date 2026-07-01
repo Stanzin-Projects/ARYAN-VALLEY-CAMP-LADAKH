@@ -173,7 +173,7 @@ export const testimonials = [
   name: 'Chuskit Dolma',
   // from: 'Milan, Italy',
   content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
-  image: '/review2.png',
+  // image: '/.png' no image for now ,
   rating: 5,
 },
 {
