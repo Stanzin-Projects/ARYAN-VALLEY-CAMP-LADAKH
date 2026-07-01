@@ -170,17 +170,17 @@ export const testimonials = [
 },
 {
   id: 5,
-  name: 'Chuskit Dolma',
+  name: 'dinesh singh',
   // from: 'Milan, Italy',
-  content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
+  content: `The best resort in the area. Very aesthetically done up. Must visit`,
   // image: '/.png' no image for now ,
   rating: 5,
 },
 {
   id: 6,
-  name: 'Sahil Jamwal',
+  name: 'shivakant garg',
   
-  content: `Aryan Valley Camp is a hidden gem in Ladakh. Surrounded by stunning mountains and apricot orchards, it offers a peaceful escape with comfortable tents, delicious local food, and exceptional hospitality. The opportunity to experience the unique Brokpa culture and the untouched beauty of Aryan Valley made this stay truly unforgettable. Highly recommended for travelers seeking an authentic and offbeat Ladakh experience.`,
+  content: `Tour of Aryan Vally was amazing, Road is under construction, we attended the local festival ,Home stay is available, Camp also available..`,
   // image: '/review2.png',
   rating: 5,
 },
@@ -197,7 +197,7 @@ First let me start with what's good.
 * Nice views
 * hot water was available
 * power was provided entire night.`,
-  image: '/review2.png',
+  // image: '/review2.png',
   rating: 5,
 },
 {
@@ -205,7 +205,7 @@ First let me start with what's good.
   name: 'Mohad Ali',
   // from: 'Milan, Italy',
   content: `In ladakh The tourist love to vist Aryan valley most beautiful place nature Indus river view. handsome people in ladkh and there culture..`,
-  image: '/review2.png',
+  // image: '/review2.png',
   rating: 5,
 },
 ];
