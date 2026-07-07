@@ -30,20 +30,18 @@ export default function HeroSection() {
     >
 
       {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source
-          // src="/11800506-uhd_3840_2160_25fps.mp4"
-          src="/WhatsApp Video 2026-04-09 at 7.32.23 PM.mp4"
-          // src = "my-app/public/WhatsApp Video 2026-04-09 at 7.32.23 PM.mp4"
-          type="video/mp4"
-        />
-      </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source
+            src="/WhatsApp Video 2026-04-09 at 7.32.23 PM.webm"
+            type="video/webm"
+          />
+        </video>
 
       {/* Dark Gradient Overlay */}
       <motion.div
