@@ -107,7 +107,7 @@ export default function HeroSection() {
             leading-tight
           "
         >
-          Experience the Hidden Aryan Valley of Ladakh 
+          Experience the Hidden Aryan Valley of  sending git Ladakh 
          
         </motion.h1>
 
