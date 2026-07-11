@@ -6,8 +6,8 @@ import { facilities } from '../data/content';
 
 export default function FacilitiesSection() {
   return (
-    <section id="facilities" className="bg-beige/10 section-spacing">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="facilities" className="section-spacing bg-[#f7efe7]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="World-Class Facilities"
           subtitle="Every comfort thoughtfully designed for your well-being in the Himalayas"
@@ -19,7 +19,7 @@ export default function FacilitiesSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3"
         >
           {facilities.map((facility) => (
             <FacilitiesCard
@@ -27,20 +27,18 @@ export default function FacilitiesSection() {
               title={facility.title}
               description={facility.description}
               icon={facility.icon}
-              image={facility.image}
             />
           ))}
         </motion.div>
 
-        {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 bg-gradient-to-r from-warm-brown/5 to-olive/5 rounded-lg border border-light-taupe text-center"
+          className="mt-16 rounded-[32px] border border-light-taupe/70 bg-white/80 p-8 text-center shadow-[0_20px_45px_-20px_rgba(93,80,67,0.25)] backdrop-blur-sm"
         >
-          <p className="text-lg text-stone-grey leading-relaxed max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-stone-grey">
             Located in one of the world's coldest regions, our camp is equipped with essential amenities to ensure your safety, comfort, and well-being. From hot water facilities to comprehensive first aid, we've got you covered.
           </p>
         </motion.div>

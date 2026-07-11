@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`
+      className="
         fixed
         top-0
         left-0
@@ -60,12 +60,12 @@ export default function Navbar() {
         z-50
         transition-all
         duration-500
-        ${
-          scrolled
-            ? 'bg-off-white/95 backdrop-blur-xl shadow-lg border-b border-light-taupe'
-            : 'bg-transparent'
-        }
-      `}
+        bg-white/95
+        backdrop-blur-xl
+        shadow-lg
+        border-b
+        border-light-taupe
+      "
     >
       <div
         className="
@@ -125,7 +125,7 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => handleNavClick(link)}
-              className={`
+              className="
                 relative
                 text-sm
                 font-semibold
@@ -134,7 +134,8 @@ export default function Navbar() {
                 whitespace-nowrap
                 transition-all
                 duration-300
-
+                text-stone-grey
+                hover:text-warm-brown
                 after:absolute
                 after:left-0
                 after:-bottom-1
@@ -142,23 +143,9 @@ export default function Navbar() {
                 after:w-0
                 after:transition-all
                 after:duration-300
-
+                after:bg-warm-brown
                 hover:after:w-full
-
-                ${
-                  scrolled
-                    ? `
-                      text-stone-grey
-                      hover:text-warm-brown
-                      after:bg-warm-brown
-                    `
-                    : `
-                      text-white
-                      hover:text-beige
-                      after:bg-beige
-                    `
-                }
-              `}
+              "
             >
               {link}
             </button>
@@ -180,19 +167,16 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => handleNavClick(link)}
-              className={`
+              className="
                 text-xs
                 font-semibold
                 uppercase
                 tracking-wide
                 transition-all
                 duration-300
-                ${
-                  scrolled
-                    ? 'text-stone-grey hover:text-warm-brown'
-                    : 'text-white hover:text-beige'
-                }
-              `}
+                text-stone-grey
+                hover:text-warm-brown
+              "
             >
               {link}
             </button>
@@ -201,16 +185,12 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className={`
+          className="
             md:hidden
             transition-colors
             duration-300
-            ${
-              scrolled
-                ? 'text-warm-brown'
-                : 'text-white'
-            }
-          `}
+            text-warm-brown
+          "
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -236,7 +216,7 @@ export default function Navbar() {
           top-full
           left-0
           right-0
-          bg-off-white/95
+          bg-white/95
           backdrop-blur-xl
           border-b
           border-light-taupe

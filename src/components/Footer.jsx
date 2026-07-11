@@ -47,6 +47,15 @@ export default function Footer() {
               Experience authentic Himalayan culture beside the Indus River.
               Premium riverside camping with genuine Brokpa tribal experiences.
             </p>
+
+            <a
+              href="/Aryan_Valley_Camp_Brochure_final.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-warm-brown/30 bg-white/5 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-warm-brown transition-all duration-300 hover:bg-warm-brown hover:text-white"
+            >
+              <span>Booking & Cancellation Policy</span>
+            </a>
           </motion.div>
 
           {/* QUICK LINKS */}
