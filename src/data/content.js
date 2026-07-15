@@ -25,7 +25,7 @@ export const experiences = [
     id: 4,
     title: 'Traditional Dance & Music',
     description: 'Experience authentic Brokpa performances, traditional instruments, and cultural celebrations.',
-    image: '/WhatsApp Video 2026-04-09 at 7.30.24 PM.mp4',
+    image: '/WhatsApp-Video 2026-04-09 at 7.30.24 PM.mp4',
     icon: 'Music',
   },
   {
@@ -61,7 +61,7 @@ export const experiences = [
 export const festivals = [
   {
     id: 1,
-    title: 'Cherry Blossom Festival',
+    title: 'Apricot Blosoom Festival',
     season: 'April - May',
     description: 'Witness the magical blooming of cherry and apricot blossoms across the valley, transforming landscapes into flowers.',
     highlight: 'Spring awakening with ancient traditions',
@@ -84,8 +84,8 @@ export const festivals = [
     season: 'January - February',
     description: 'Celebrate the harvest season with local communities, traditional music, and authentic Himalayan culture.',
     highlight: 'Community celebration of abundance',
-    image: '/WhatsApp Video 2026-04-09 at 7.30.24 PM.mp4',
-    video: '/WhatsApp Video 2026-04-09 at 7.30.24 PM.mp4',
+    image: '/WhatsApp-Video 2026-04-09 at 7.30.24 PM.mp4',
+    video: '/WhatsApp-Video 2026-04-09 at 7.30.24 PM.mp4',
     activities: ['Community harvest', 'Cooking demonstrations', 'Cultural exchanges'],
   },
 ];
@@ -215,9 +215,9 @@ export const galleryCategories = [
     id: 1,
     name: 'Nature',
     images: [
-      { id: 1, url: '/nature 1.jpeg', title: 'Mountain Vista' },
-      { id: 2, url: '/nature 2.jpeg', title: 'River Flow' },
-      { id: 3, url: '/nature.jpeg', title: 'Valley Dawn' },
+      { id: 1, url: '/nature-1.jpeg', title: 'Mountain Vista' },
+      { id: 2, url: '/nature-2.jpeg', title: 'Valley' },
+      { id: 3, url: '/nature-3.jpeg', title: 'Valley View' },
     ],
   },
   {
@@ -234,16 +234,16 @@ export const galleryCategories = [
     name: 'Campsite',
     images: [
       { id: 1, url: '/camp12.jpg', title: 'Camp Setup' },
-      { id: 2, url: '/camp 1.jpg', title: 'Camp View' },
-      { id: 3, url: '/camp 2.jpg', title: 'Riverside View' },
+      { id: 2, url: '/camp-1.jpg', title: 'Camp View' },
+      { id: 3, url: '/camp-2.jpg', title: 'Riverside View' },
     ],
   },
   {
     id: 4,
     name: 'Village Life',
     images: [
-      { id: 1, url: '/village 1.jpg', title: 'Village Path' },
-      { id: 2, url: '/vilage 2.jpg', title: 'Daily Life' },
+      { id: 1, url: '/village-1.jpg', title: 'Village Kitchen' },
+      { id: 2, url: '/village-2.jpg', title: 'Daily Life' },
     ],
   },
 ];

@@ -38,8 +38,12 @@ export default function HeroSection() {
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
-            src="/WhatsApp Video 2026-04-09 at 7.32.23 PM.webm"
+            src="/hero-video.webm"
             type="video/webm"
+          />
+          <source
+            src="/hero-video.mp4"
+            type="video/mp4"
           />
         </video>
 
