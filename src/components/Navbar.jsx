@@ -110,8 +110,8 @@ export default function Navbar() {
             `}
           /> */}
 
-          <img
-  src="/favicon.svg"
+         <img
+  src="/aryan-logo.svg"
   alt="Aryan Valley Camp Logo"
   className={`
     w-auto
