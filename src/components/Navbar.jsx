@@ -93,7 +93,7 @@ export default function Navbar() {
             flex-shrink-0
           "
         >
-          <img
+          {/* <img
             src="/favicon.svg"
             alt="Aryan Valley Camp Logo"
             className={`
@@ -108,7 +108,24 @@ export default function Navbar() {
                   : 'h-20 md:h-24 lg:h-32'
               }
             `}
-          />
+          /> */}
+
+          <img
+  src="/favicon.svg"
+  alt="Aryan Valley Camp Logo"
+  className={`
+    w-auto
+    object-contain
+    transition-all
+    duration-500
+    hover:scale-105
+    ${
+      scrolled
+        ? 'h-20 md:h-24 lg:h-28'
+        : 'h-24 md:h-28 lg:h-36'
+    }
+  `}
+/>
         </motion.div>
 
         {/* Desktop Navigation */}
